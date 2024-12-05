@@ -28,6 +28,7 @@ DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 DebugCam="*res://addons/debug_camera/scripts/DebugCamAutoload.gd"
 Scenes="*res://addons/scenes/scenes.gd"
 State="*res://utils/state/state.tscn"
+Shortcuts="*res://addons/shortcuts/shortcuts.gd"
 
 [debug]
 
@@ -38,7 +39,7 @@ gdscript/warnings/empty_file=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_camera/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/loggie/plugin.cfg", "res://addons/scenes/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_camera/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/loggie/plugin.cfg", "res://addons/scenes/plugin.cfg", "res://addons/shortcuts/plugin.cfg")
 
 [input]
 
@@ -51,6 +52,22 @@ cycle_debug_menu={
 toggle_debug_camera={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":true,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+toggle_audio_mute={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":77,"key_label":0,"unicode":77,"location":0,"echo":false,"script":null)
+]
+}
+toggle_fullscreen={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":70,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194342,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+toggle_mouse_capture={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":true,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":77,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

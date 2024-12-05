@@ -18,6 +18,7 @@ for Godot 4.3+.
 - [loggie](https://github.com/Shiva-Shadowsong/loggie) for logging
 - [dev blocks](https://github.com/Manonox/godot-dev-blocks) for blocking out simple 3D scenes
 - [scenes](./addons/scenes) for a simple threaded scene loader (TODO: publish this separately)
+- [shortcuts](./addons/shortcuts) to provide some shortcuts (fullscreen, mute, mouse capture, etc.) (TODO: publish this separately)
 - [`release.sh`](./release.sh) for building all exports
 - [`butler.sh`](./butler.sh) for uploading all exports to itch.io via butler
 
