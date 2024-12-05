@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx12dxms65kjx"]
+
+[sub_resource type="GDScript" id="GDScript_sie7s"]
+script/source = "extends Node
+
+# this will be the entrypoint scene for your project
+# you could use this to setup resources, or to decide which other scene to load
+
+func _ready() -> void:
+	print(\"meow :3\")
+"
+
+[node name="Entrypoint" type="Node"]
+script = SubResource("GDScript_sie7s")
