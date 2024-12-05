@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://qayedf22bvb2"]
+
+[ext_resource type="Texture2D" uid="uid://bcf2b2fnlhyq" path="res://assets/textures/godot_icon.svg" id="1_31281"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_31281")
