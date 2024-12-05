@@ -3,7 +3,7 @@ boilerplating and provides a project structure.
 
 for Godot 4.3+.
 
-### provides
+## provides
 
 - sane project / addon settings and file hierarchy
   - GDScript static typing is enforced
@@ -22,3 +22,8 @@ for Godot 4.3+.
 - [`butler.sh`](./butler.sh) for uploading all exports to itch.io via butler
 
 ***note: addons may be modified from their original release to fix / add stuff***
+
+## usage
+
+clone the repository and change the remote to point to your own.
+or use GitHub's "Use this template" button.
