@@ -5,8 +5,6 @@ for Godot 4.3+.
 
 ### provides
 
-***note: addons may be modified from their original release to fix / add stuff***
-
 - sane project / addon settings and file hierarchy
   - GDScript static typing is enforced
   - [template scene](./scenes/_template.tscn) to duplicate for any new scenes, with [world environment and sun defaults](./scenes/defaults)
@@ -21,3 +19,5 @@ for Godot 4.3+.
 - [scenes](./addons/scenes) for a simple threaded scene loader (TODO: publish this separately)
 - [`release.sh`](./release.sh) for building all exports
 - [`butler.sh`](./butler.sh) for uploading all exports to itch.io via butler
+
+***note: addons may be modified from their original release to fix / add stuff***
