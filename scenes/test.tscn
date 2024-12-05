@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://s8jo4rcnrfnw"]
 
-[ext_resource type="PackedScene" uid="uid://droifn8aosut4" path="res://scenes/defaults/world_environment.tscn" id="1_bl13t"]
-[ext_resource type="PackedScene" uid="uid://m5hac26rq77e" path="res://scenes/defaults/sun.tscn" id="2_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://droifn8aosut4" path="res://scenes/_defaults/world_environment.tscn" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://m5hac26rq77e" path="res://scenes/_defaults/sun.tscn" id="2_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="3_iyx0m"]
 
 [node name="Root" type="Node3D"]
