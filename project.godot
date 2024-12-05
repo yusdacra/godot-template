@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="game_template"
-run/main_scene="uid://dx12dxms65kjx"
+run/main_scene="res://scenes/_entrypoint/entrypoint.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
