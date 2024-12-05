@@ -34,6 +34,14 @@ func _process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Toggle cameras
+	if event.is_action_pressed(&"toggle_debug_camera"):
+		var cam := main_cam
+		cam.enabled = !cam.enabled
+		enabled = !cam.enabled
+	
+	if not enabled: return
+	
 	if event is InputEventMouseButton:
 		# zoom out
 		if event.pressed && event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
@@ -51,9 +59,3 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion && _moveCamera:
 		position += (_previousPosition - event.position) / _zoom_level
 		_previousPosition = event.position
-	
-	# Toggle cameras
-	if event.is_action_pressed(&"toggle_debug_camera"):
-		var cam := main_cam
-		cam.enabled = !cam.enabled
-		enabled = !cam.enabled

@@ -37,6 +37,14 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Toggle cameras
+	if event.is_action_pressed(&"toggle_debug_camera"):
+		var cam := main_cam
+		cam.current = !cam.current
+		current = !cam.current
+	
+	if not current: return
+	
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			rotation.y -= event.relative.x / 1000 * sensitivity
@@ -51,9 +59,3 @@ func _unhandled_input(event: InputEvent) -> void:
 				_velocity = clamp(_velocity * speed_scale, min_speed, max_speed)
 			MOUSE_BUTTON_WHEEL_DOWN: # decrease fly velocity
 				_velocity = clamp(_velocity / speed_scale, min_speed, max_speed)
-	
-	# Toggle cameras
-	if event.is_action_pressed(&"toggle_debug_camera"):
-		var cam := main_cam
-		cam.current = !cam.current
-		current = !cam.current
