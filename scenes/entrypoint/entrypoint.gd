@@ -6,7 +6,7 @@ extends Node
 @export_file var initial_scene: String
 
 func _ready() -> void:
-	Loggie.notice("meow :3")
+	Loggie.notice(State.some_string)
 	# prints scene load times
 	Scenes.change_started.connect(
 		func(scene_path: String, _params: Dictionary) -> void:
