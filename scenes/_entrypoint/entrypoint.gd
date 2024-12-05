@@ -18,11 +18,5 @@ func _ready() -> void:
 				CONNECT_ONE_SHOT
 			)
 	)
-	# hook the debug camera in for all scenes we load (if debug)
-	if OS.is_debug_build():
-		Scenes.scene_changed.connect(
-			func(scene: Node, _params: Dictionary) -> void:
-				DebugCam.add_debug_cam(scene)
-		)
 	# load our scene
 	Scenes.change_scene_to(initial_scene)

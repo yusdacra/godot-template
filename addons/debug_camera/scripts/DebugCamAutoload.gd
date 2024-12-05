@@ -4,10 +4,12 @@ var debug_cam_2d = preload("res://addons/debug_camera/scripts/DebugCamera2D.gd")
 var debug_cam_3d = preload("res://addons/debug_camera/scripts/DebugCamera3D.gd")
 
 func _ready() -> void:
-	var cur_scene: Node = get_tree().current_scene
-	# run if play current scene
-	if ProjectSettings.get("application/run/main_scene") != cur_scene.scene_file_path:
-		add_debug_cam(cur_scene)
+	if not OS.is_debug_build(): return
+	# hook the debug camera in for all scenes we load (if debug)
+	Scenes.scene_changed.connect(
+		func(scene: Node, _params: Dictionary) -> void:
+			add_debug_cam(scene)
+	)
 
 ## call this function after you scene is ready to add the debug camera to it
 func add_debug_cam(scene: Node) -> void:

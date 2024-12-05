@@ -25,12 +25,10 @@ var main_cam : Camera2D
 
 
 func _ready() -> void:
+	enabled = false; name = "DebugCamera2D"
 	main_cam = get_viewport().get_camera_2d()
-
-
-func _process(_delta: float) -> void:
-	if !enabled:
-		position = main_cam.global_position
+	Loggie.debug("debug camera", self)
+	Loggie.debug("scene camera", main_cam)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -39,6 +37,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		var cam := main_cam
 		cam.enabled = !cam.enabled
 		enabled = !cam.enabled
+		if enabled:
+			self.make_current()
+		else:
+			self.global_position = cam.global_position
+			cam.make_current()
 		Loggie.info("toggled 2D debug cam (%s)" % enabled)
 	
 	if not enabled: return
@@ -58,5 +61,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			_moveCamera = false
 	elif event is InputEventMouseMotion && _moveCamera:
-		position += (_previousPosition - event.position) / _zoom_level
+		global_position += (_previousPosition - event.position) / _zoom_level
 		_previousPosition = event.position

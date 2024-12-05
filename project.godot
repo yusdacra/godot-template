@@ -24,11 +24,11 @@ buses/default_bus_layout="uid://cii2gmf3t8nk4"
 [autoload]
 
 Loggie="*res://addons/loggie/loggie.gd"
+State="*res://utils/state/state.tscn"
+Scenes="*res://addons/scenes/scenes.gd"
+Shortcuts="*res://addons/shortcuts/shortcuts.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 DebugCam="*res://addons/debug_camera/scripts/DebugCamAutoload.gd"
-Scenes="*res://addons/scenes/scenes.gd"
-State="*res://utils/state/state.tscn"
-Shortcuts="*res://addons/shortcuts/shortcuts.gd"
 
 [debug]
 
@@ -78,6 +78,7 @@ general/show_loggie_specs=0
 timestamps/output_timestamps=true
 formats/timestamp="[{hour}:{minute}:{second}]"
 formats/info_message="[b][color=green][INFO]:[/color][/b] {msg}"
+general/log_level=4
 
 [physics]
 

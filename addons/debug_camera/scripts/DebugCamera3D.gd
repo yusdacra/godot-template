@@ -15,7 +15,11 @@ var main_cam : Camera3D
 
 
 func _ready() -> void:
+	current = false
+	name = "DebugCamera3D"
 	main_cam = get_viewport().get_camera_3d()
+	Loggie.debug("debug camera", self)
+	Loggie.debug("scene camera", main_cam)
 
 
 func _process(delta: float) -> void:
