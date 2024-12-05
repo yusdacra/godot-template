@@ -9,6 +9,7 @@ for Godot 4.3+.
   - GDScript static typing is enforced
   - [template scene](./scenes/_template.tscn) to duplicate for any new scenes, with [world environment and sun defaults](./scenes/defaults)
   - export presets for windows, linux, osx and web
+  - default rendering method is set to Compatibility
   - ...and other settings
 - [godot debug menu](https://github.com/godot-extended-libraries/godot-debug-menu) for in-game performance / hardware metrics
   - input action is named `cycle_debug_menu`, set to `Control+Alt+D` and `F3` by default
