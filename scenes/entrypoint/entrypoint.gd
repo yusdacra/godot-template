@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx12dxms65kjx"]
-
-[sub_resource type="GDScript" id="GDScript_sie7s"]
-script/source = "extends Node
+extends Node
 
 # this will be the entrypoint scene for your project
 # you could use this to setup resources, or to decide which other scene to load
@@ -9,15 +6,15 @@ script/source = "extends Node
 @export_file var initial_scene: String
 
 func _ready() -> void:
-	Loggie.notice(\"meow :3\")
+	Loggie.notice("meow :3")
 	# prints scene load times
 	Scenes.change_started.connect(
 		func(scene_path: String, _params: Dictionary) -> void:
-			Loggie.info(\"starting change to scene %s\" % scene_path)
+			Loggie.info("starting change to scene %s" % scene_path)
 			var load_start_time := Time.get_ticks_msec()
 			Scenes.scene_changed.connect(
 				func(scene: Node, _params: Dictionary) -> void:
-					Loggie.info(\"changed to %s scene in %sms\" % [scene.name, Time.get_ticks_msec() - load_start_time]),
+					Loggie.info("changed to %s scene in %sms" % [scene.name, Time.get_ticks_msec() - load_start_time]),
 				CONNECT_ONE_SHOT
 			)
 	)
@@ -28,8 +25,3 @@ func _ready() -> void:
 	)
 	# load our scene
 	Scenes.change_scene_to(initial_scene)
-"
-
-[node name="Entrypoint" type="Node"]
-script = SubResource("GDScript_sie7s")
-initial_scene = "uid://s8jo4rcnrfnw"
