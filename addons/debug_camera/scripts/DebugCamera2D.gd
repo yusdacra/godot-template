@@ -53,8 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_previousPosition = event.position
 	
 	# Toggle cameras
-	if event is InputEventKey && event.is_pressed():
-		if event.keycode == KEY_MINUS:
-			var cam := main_cam
-			cam.enabled = !cam.enabled
-			enabled = !cam.enabled
+	if event.is_action_pressed(&"toggle_debug_camera"):
+		var cam := main_cam
+		cam.enabled = !cam.enabled
+		enabled = !cam.enabled

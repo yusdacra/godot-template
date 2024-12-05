@@ -53,8 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				_velocity = clamp(_velocity / speed_scale, min_speed, max_speed)
 	
 	# Toggle cameras
-	if event is InputEventKey && event.is_pressed():
-		if event.keycode == KEY_MINUS:
-			var cam := main_cam
-			cam.current = !cam.current
-			current = !cam.current
+	if event.is_action_pressed(&"toggle_debug_camera"):
+		var cam := main_cam
+		cam.current = !cam.current
+		current = !cam.current
