@@ -7,7 +7,7 @@ for Godot 4.3+.
 
 - sane project / addon settings and file hierarchy
   - GDScript static typing is enforced
-  - [template scene](./scenes/_template.tscn) to duplicate for any new scenes, with [world environment and sun defaults](./scenes/defaults)
+  - template scenes (2D/3D) to duplicate for any new scenes, with [world environment and sun defaults](./scenes/_defaults)
   - export presets for windows, linux, osx and web
   - default rendering method is set to Compatibility
   - ...and other settings
