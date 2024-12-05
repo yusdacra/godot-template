@@ -39,6 +39,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var cam := main_cam
 		cam.enabled = !cam.enabled
 		enabled = !cam.enabled
+		Loggie.info("toggled 2D debug cam (%s)" % enabled)
 	
 	if not enabled: return
 	

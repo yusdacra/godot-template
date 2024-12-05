@@ -42,6 +42,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var cam := main_cam
 		cam.current = !cam.current
 		current = !cam.current
+		Loggie.info("toggled 3D debug cam (%s)" % current)
 	
 	if not current: return
 	
