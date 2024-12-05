@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 #
+# The original license for this file is provided below:
+#
 # MIT License
 #
 # Copyright (c) 2020 Crystal Bit
