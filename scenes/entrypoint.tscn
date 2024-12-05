@@ -7,7 +7,7 @@ script/source = "extends Node
 # you could use this to setup resources, or to decide which other scene to load
 
 func _ready() -> void:
-	print(\"meow :3\")
+	Loggie.info(\"meow :3\")
 "
 
 [node name="Entrypoint" type="Node"]
