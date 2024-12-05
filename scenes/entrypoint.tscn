@@ -10,12 +10,24 @@ script/source = "extends Node
 
 func _ready() -> void:
 	Loggie.notice(\"meow :3\")
-	var load_start_time := Time.get_ticks_msec()
-	Scenes.change_scene_to(initial_scene).connect(
-		func(_scene: Node, _params: Dictionary) -> void:
-			Loggie.info(\"changed to test scene in %s ms\" % (Time.get_ticks_msec() - load_start_time)),
-		CONNECT_ONE_SHOT
+	# prints scene load times
+	Scenes.change_started.connect(
+		func(scene_path: String, _params: Dictionary) -> void:
+			Loggie.info(\"starting change to scene %s\" % scene_path)
+			var load_start_time := Time.get_ticks_msec()
+			Scenes.scene_changed.connect(
+				func(scene: Node, _params: Dictionary) -> void:
+					Loggie.info(\"changed to %s scene in %sms\" % [scene.name, Time.get_ticks_msec() - load_start_time]),
+				CONNECT_ONE_SHOT
+			)
 	)
+	# hook the debug camera in for all scenes we load
+	Scenes.scene_changed.connect(
+		func(scene: Node, _params: Dictionary) -> void:
+			DebugCam.add_debug_cam(scene)
+	)
+	# load our scene
+	Scenes.change_scene_to(initial_scene)
 "
 
 [node name="Entrypoint" type="Node"]
