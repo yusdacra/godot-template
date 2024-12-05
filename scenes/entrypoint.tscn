@@ -6,9 +6,18 @@ script/source = "extends Node
 # this will be the entrypoint scene for your project
 # you could use this to setup resources, or to decide which other scene to load
 
+@export_file var initial_scene: String
+
 func _ready() -> void:
-	Loggie.info(\"meow :3\")
+	Loggie.notice(\"meow :3\")
+	var load_start_time := Time.get_ticks_msec()
+	Scenes.change_scene_to(initial_scene).connect(
+		func(_scene: Node, _params: Dictionary) -> void:
+			Loggie.info(\"changed to test scene in %s ms\" % (Time.get_ticks_msec() - load_start_time)),
+		CONNECT_ONE_SHOT
+	)
 "
 
 [node name="Entrypoint" type="Node"]
 script = SubResource("GDScript_sie7s")
+initial_scene = "uid://s8jo4rcnrfnw"

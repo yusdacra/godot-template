@@ -24,8 +24,9 @@ buses/default_bus_layout="uid://cii2gmf3t8nk4"
 [autoload]
 
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
-State="*res://utils/state/state.tscn"
 Loggie="*res://addons/loggie/loggie.gd"
+Scenes="*res://addons/scenes/scenes.gd"
+State="*res://utils/state/state.tscn"
 
 [debug]
 
@@ -36,7 +37,7 @@ gdscript/warnings/empty_file=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/loggie/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/loggie/plugin.cfg", "res://addons/scenes/plugin.cfg")
 
 [input]
 
