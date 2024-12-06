@@ -37,11 +37,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		var cam := main_cam
 		cam.enabled = !cam.enabled
 		enabled = !cam.enabled
-		if enabled:
-			self.make_current()
-		else:
-			self.global_position = cam.global_position
-			cam.make_current()
+		self.global_position = cam.global_position
+		if enabled: self.make_current()
+		else: cam.make_current()
 		Loggie.info("toggled 2D debug cam (%s)" % enabled)
 	
 	if not enabled: return
