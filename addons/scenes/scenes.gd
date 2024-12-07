@@ -47,7 +47,11 @@ func _set_new_scene(resource: PackedScene) -> void:
 ## (and any other signal) otherwise it will run every time a scene is changed.
 func change_scene_to(path: String, params = {}) -> Signal:
 	_params = params
-	_loader_mt.resource_loaded.connect(_set_new_scene, CONNECT_ONE_SHOT)
-	_loader_mt.load_resource(path)
+	var maybe_resource = _loader_mt.load_resource(path)
 	change_started.emit(path, params)
+	if maybe_resource:
+		call_deferred("_set_new_scene", maybe_resource)
+		return scene_changed
+	else:
+		_loader_mt.resource_loaded.connect(_set_new_scene, CONNECT_ONE_SHOT)
 	return scene_changed
