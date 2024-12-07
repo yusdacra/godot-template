@@ -22,6 +22,7 @@ func _ready() -> void:
 	if ProjectSettings.get("application/run/main_scene") != cur_scene.scene_file_path:
 		if not cur_scene.is_node_ready(): await cur_scene.ready
 		scene_loaded.emit(cur_scene, _params)
+	current = cur_scene
 	scene_changed.emit(cur_scene, _params)
 
 
@@ -34,6 +35,7 @@ func _set_new_scene(resource: PackedScene) -> void:
 	scene_loaded.emit(instanced_scn, _params)
 	get_tree().root.add_child(instanced_scn)  # triggers _ready
 	get_tree().current_scene = instanced_scn
+	current = instanced_scn
 	scene_changed.emit(instanced_scn, _params)
 	_params = {}
 
