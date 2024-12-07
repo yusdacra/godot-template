@@ -10,6 +10,7 @@ var ACTIONS := {
 	&"toggle_fullscreen": toggle_fullscreen,
 	&"toggle_audio_mute": toggle_mute,
 	&"toggle_mouse_capture": toggle_mouse_cursor,
+	&"restart_scene": restart_scene,
 }
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -32,3 +33,6 @@ func toggle_mouse_cursor() -> void:
 	var captured = Input.mouse_mode == MOUSE_MODE
 	Input.mouse_mode = MOUSE_MODE if not captured else previous_mouse_mode
 	Loggie.info("set mouse mode to %s" % ("captured" if not captured else "uncaptured"))
+
+func restart_scene() -> void:
+	Scenes.change_scene_to(Scenes.current.scene_file_path)
