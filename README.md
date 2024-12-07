@@ -28,3 +28,6 @@ for Godot 4.3+.
 
 clone the repository and change the remote to point to your own.
 or use GitHub's "Use this template" button.
+
+alternatively, if you don't want to delete unwanted files like the `UNLICENSE` or `icon.png` etc.
+head over to the [releases tab](https://github.com/yusdacra/godot-template/releases) and download the `template.zip` file from the latest release.
