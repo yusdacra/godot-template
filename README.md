@@ -26,6 +26,8 @@ for Godot 4.3+.
 
 ## usage
 
+you can get the latest release from the [asset library](https://godotengine.org/asset-library/asset/3546).
+
 clone the repository and change the remote to point to your own.
 or use GitHub's "Use this template" button.
 
